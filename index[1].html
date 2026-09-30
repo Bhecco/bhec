@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BHEC - Biblical Home Education Community. Un espacio seguro para aprender, crecer y vivir nuestra fe.">
+  <title>BHEC | Biblical Home Education Community</title>
+  <style>
+    :root{
+      --orange:#f28c00;
+      --orange-dark:#d96f00;
+      --olive:#7f8b45;
+      --cream:#fffaf2;
+      --dark:#252525;
+      --white:#ffffff;
+      --shadow:0 12px 35px rgba(37,37,37,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--dark);
+      background:var(--cream);
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,92%);margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,250,242,.96);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #eee5d8;
+    }
+    .nav{
+      min-height:76px;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:52px;height:52px;object-fit:cover;border-radius:50%}
+    .brand span{font-size:1.05rem}
+    nav{display:flex;gap:22px;flex-wrap:wrap}
+    nav a{font-weight:700;font-size:.95rem}
+    nav a:hover{color:var(--orange-dark)}
+
+    .hero{padding:70px 0 55px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.05fr .95fr;
+      gap:45px;align-items:center;
+    }
+    .eyebrow{
+      color:var(--orange-dark);font-weight:800;
+      letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;
+    }
+    h1{
+      font-size:clamp(2.5rem,6vw,4.8rem);
+      line-height:1.02;margin:12px 0 20px;
+    }
+    h1 span{color:var(--orange)}
+    .hero p{font-size:1.12rem;max-width:650px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-block;padding:13px 20px;border-radius:999px;
+      font-weight:800;border:2px solid var(--orange);
+      transition:.2s ease;
+    }
+    .btn.primary{background:var(--orange);color:white}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,140,0,.22)}
+    .btn.secondary{background:white}
+
+    .logo-card{
+      background:white;border-radius:30px;padding:18px;
+      box-shadow:var(--shadow);transform:rotate(1deg);
+    }
+    .logo-card img{display:block;width:100%;border-radius:20px}
+
+    section{padding:72px 0}
+    .section-title{text-align:center;max-width:720px;margin:0 auto 40px}
+    .section-title h2{font-size:2.25rem;margin:0 0 10px}
+    .section-title p{margin:0;color:#5e5e5e}
+
+    .cards{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+    }
+    .card{
+      background:white;padding:28px;border-radius:var(--radius);
+      box-shadow:var(--shadow);border-top:5px solid var(--orange);
+    }
+    .icon{font-size:2rem}
+    .card h3{margin:10px 0 8px}
+
+    .about{
+      background:#f3eedf;
+    }
+    .about-grid{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;
+    }
+    .quote{
+      background:white;padding:34px;border-radius:var(--radius);
+      box-shadow:var(--shadow);font-size:1.25rem;font-weight:700;
+    }
+    .quote small{display:block;margin-top:15px;font-size:.85rem;font-weight:400;color:#666}
+
+    .resources{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+    }
+    .resource{
+      background:white;border-radius:18px;padding:22px;
+      border-left:6px solid var(--olive);box-shadow:var(--shadow);
+    }
+
+    .contact{
+      background:var(--dark);color:white;
+    }
+    .contact .section-title p{color:#ddd}
+    .contact-box{
+      max-width:750px;margin:auto;text-align:center;
+      background:#303030;border-radius:var(--radius);padding:38px;
+    }
+    .contact-box .btn.secondary{color:var(--dark)}
+
+    footer{padding:28px 0;text-align:center;background:#191919;color:#ccc;font-size:.9rem}
+
+    @media(max-width:800px){
+      .nav{padding:10px 0;align-items:flex-start}
+      nav{gap:10px 15px;justify-content:flex-end}
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .cards,.resources{grid-template-columns:1fr}
+      .hero{padding-top:45px}
+      .logo-card{max-width:560px;margin:auto}
+    }
+    @media(max-width:520px){
+      .brand span{display:none}
+      nav{font-size:.84rem}
+      nav a{font-size:.84rem}
+      h1{font-size:2.8rem}
+      section{padding:55px 0}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="BHEC Inicio">
+        <img src="logo-bhec.jpg" alt="Logo de BHEC">
+        <span>BHEC</span>
+      </a>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes">Quiénes somos</a>
+        <a href="#educacion">Educación</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Biblical Home Education Community</div>
+          <h1>Aprender, crecer y <span>vivir nuestra fe.</span></h1>
+          <p>
+            Un espacio seguro para la educación bíblica, el crecimiento personal
+            y la construcción de una comunidad centrada en la Palabra de Dios.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#quienes">Conoce BHEC</a>
+            <a class="btn secondary" href="#recursos">Ver recursos</a>
+          </div>
+        </div>
+
+        <div class="logo-card">
+          <img src="logo-bhec.jpg" alt="Identidad visual de BHEC">
+        </div>
+      </div>
+    </section>
+
+    <section id="quienes">
+      <div class="container">
+        <div class="section-title">
+          <h2>¿Qué es BHEC?</h2>
+          <p>Una comunidad que busca integrar educación, fe y acompañamiento.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📖</div>
+            <h3>Fundamento bíblico</h3>
+            <p>
+              Promovemos el aprendizaje de la Biblia como parte fundamental
+              de la formación y el crecimiento de nuestra comunidad.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h3>Comunidad</h3>
+            <p>
+              Buscamos crear un ambiente de respeto, acompañamiento y
+              participación para familias y estudiantes.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🌱</div>
+            <h3>Crecimiento</h3>
+            <p>
+              Queremos desarrollar conocimientos, valores y habilidades
+              que ayuden a cada persona a crecer de manera integral.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="educacion">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">Nuestra visión</div>
+          <h2>Una educación con propósito</h2>
+          <p>
+            BHEC busca ofrecer un espacio en el que el aprendizaje pueda
+            desarrollarse en un ambiente de fe, confianza y comunidad.
+            La educación bíblica puede acompañar la formación académica,
+            personal y espiritual.
+          </p>
+          <p>
+            Nuestro objetivo es que cada miembro pueda aprender, compartir
+            y poner en práctica lo aprendido dentro de su vida cotidiana.
+          </p>
+        </div>
+
+        <div class="quote">
+          “A safe place, within the Bible, one God for all and all for God,
+          in dependence on the Lord and for His glory.”
+          <small>— Lema de BHEC</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Recursos</h2>
+          <p>Un espacio para reunir materiales que apoyen el aprendizaje.</p>
+        </div>
+
+        <div class="resources">
+          <article class="resource">
+            <h3>📚 Estudios bíblicos</h3>
+            <p>Materiales y contenidos para profundizar en el conocimiento de las Escrituras.</p>
+          </article>
+          <article class="resource">
+            <h3>📝 Material educativo</h3>
+            <p>Guías, actividades y recursos que pueden complementar los procesos de aprendizaje.</p>
+          </article>
+          <article class="resource">
+            <h3>💡 Reflexiones</h3>
+            <p>Ideas y contenidos para relacionar el aprendizaje bíblico con la vida diaria.</p>
+          </article>
+          <article class="resource">
+            <h3>🤝 Comunidad</h3>
+            <p>Información sobre actividades, encuentros y espacios de participación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="section-title">
+          <h2>Conéctate con BHEC</h2>
+          <p>Este espacio puede convertirse en el punto de encuentro de nuestra comunidad.</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>¿Quieres conocer más?</h3>
+          <p>
+            Agrega aquí el correo electrónico, WhatsApp o redes sociales
+            oficiales de BHEC.
+          </p>
+          <div class="buttons" style="justify-content:center">
+            <a class="btn primary" href="mailto:bheccommunity@gmail.com">📧 Correo</a>
+            <a class="btn primary" href="https://wa.me/573184600550" target="_blank" rel="noopener">📱 WhatsApp</a>
+            <a class="btn secondary" href="https://www.instagram.com/bheccommunity/" target="_blank" rel="noopener">📸 Instagram @bheccommunity</a>
+            <a class="btn secondary" href="https://t.me/bhecco" target="_blank" rel="noopener">✈️ Telegram @bhecco</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 BHEC · Biblical Home Education Community
+  </footer>
+</body>
+</html>
